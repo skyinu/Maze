@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="answer0">1</integer>
+    <integer name="answer1">3</integer>
+    <integer name="answer2">2</integer>
+    <integer name="answer3">2</integer>
+    <integer name="answer4">3</integer>
+    <integer name="answer5">3</integer>
+    <integer name="answer6">3</integer>
+    <integer name="answer7">3</integer>
+    <integer name="answer8">3</integer>
+    <integer name="answer9">2</integer>
+    <integer name="answer10">2</integer>
+    <integer name="answer11">2</integer>
+    <integer name="answer12">3</integer>
+    <integer name="answer13">3</integer>
+    <integer name="answer14">1</integer>
+    <integer name="answer15">1</integer>
+    <integer name="answer16">1</integer>
+    <integer name="answer17">1</integer>
+    <integer name="answer18">1</integer>
+    <integer name="answer19">2</integer>
+    <integer name="answer20">3</integer>
+    <integer name="answer21">1</integer>
+    <integer name="answer22">3</integer>
+    <integer name="answer23">2</integer>
+    <integer name="answer24">3</integer>
+    <integer name="answer25">1</integer>
+    <integer name="answer26">3</integer>
+    <integer name="answer27">3</integer>
+    <integer name="answer28">3</integer>
+    <integer name="answer29">3</integer>
+</resources>

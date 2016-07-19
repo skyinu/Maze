@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="maze_view">
+        <attr name="row_number" format="integer"/>
+        <attr name="column_number" format="integer"/>
+        <attr name="fore_bitmap" format="reference"></attr>
+        <attr name="back_bitmap" format="reference"></attr>
+        <attr name="busy_background" format="reference"></attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:maze="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.maze.chen.maze.view.TopPanelFragment"
+            android:id="@+id/id_topfragment"/>
+
+        <com.maze.chen.maze.view.MazeView
+            android:layout_gravity="center"
+            android:id="@+id/maze_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            maze:column_number="10"
+            maze:row_number="10"
+            maze:fore_bitmap="@drawable/tree"
+            maze:back_bitmap="@drawable/track"
+            maze:busy_background="@drawable/busy_back" />
+
+    </LinearLayout>
+
+    <com.maze.chen.maze.view.GameContentView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/game_content_view"
+        android:paddingLeft="3dp"
+        android:paddingBottom="3dp">
+        <Button
+            android:layout_alignParentBottom="true"
+            android:id="@+id/id_open_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="@string/open_button"
+            android:alpha="0.5"
+            android:background="@drawable/open_center"
+            android:textColor="#000000"/>
+        <Button
+            android:textColor="#000000"
+            android:alpha="0.5"
+            android:layout_alignParentBottom="true"
+            android:enabled="false"
+            android:id="@+id/id_subv_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="@string/sub_velocity"
+            android:background="@drawable/sub_hack"
+            android:visibility="invisible" />
+        <Button
+            android:textColor="#000000"
+            android:alpha="0.5"
+            android:background="@drawable/icon_back"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:enabled="false"
+            android:id="@+id/id_backward_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="@string/go_back"/>
+        <Button
+            android:textColor="#000000"
+            android:background="@drawable/icon_destroy_wall"
+            android:alpha="0.5"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:enabled="false"
+            android:id="@+id/id_splitwall_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="@string/destroy_wall"/>
+    </com.maze.chen.maze.view.GameContentView>
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <!-- 是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 点击空白部分activity不消失 -->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowExitAnimation">@anim/window_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/window_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/window_out</item>
+    </style>
+</resources>

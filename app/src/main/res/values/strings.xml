@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Maze</string>
+    <string name="score_str">Time</string>
+    <string name="record_str">Record</string>
+    <string name="pass_one">第一关</string>
+    <string name="answer_question">更多</string>
+    <string name="destroy_wall">拆墙</string>
+    <string name="sub_velocity">减速</string>
+    <string name="go_back">后退</string>
+    <string name="action_settings">setting</string>
+    <string name="button_sure">确定</string>
+    <color name="question_backcolor">#BFBFBF</color>
+    <string name="open_button">展开</string>
+    <string name="str_start">开始游戏</string>
+    <string name="str_history">历史纪录</string>
+    <string name="str_decription">游戏说明</string>
+    <string name="str_next_pass">下一关</string>
+    <string name="str_pass_again">再试一次</string>
+    <string name="str_next_time">下次再玩</string>
+    <string name="str_game_description">在游戏中，玩家通过滑动屏幕控制树木的移动方向，直到顺利通过右下角的出口，进入下一关。在移动树木的过程中，玩家要合理控制速度，
+避免被后方的沙尘暴吞噬，否则游戏结束。在每一个关卡里，玩家都可以点击从屏幕上方落下的太阳来答题，每回答正确一到问题，会随机
+获得一种帮助奖励，点击左下角的展开按钮即可使用。</string>
+</resources>

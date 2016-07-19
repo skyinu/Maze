@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="auto_play" format="boolean"></attr>
+    <declare-styleable name="PowerImageView">
+        <attr name="auto_play"></attr>
+    </declare-styleable>
+</resources>
