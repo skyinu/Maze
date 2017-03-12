@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 
 import com.maze.chen.maze.GlobeContext;
 import com.maze.chen.maze.R;
+import com.maze.chen.maze.utils.GameUtil;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -26,13 +27,13 @@ import java.util.LinkedList;
 /**
  * Created by chen on 2016/3/9.
  */
-public class SurpriseButton extends Button implements View.OnClickListener, Animator.AnimatorListener {
+public class SurpriseButton extends android.support.v7.widget.AppCompatButton implements View.OnClickListener, Animator.AnimatorListener {
 
     private ObjectAnimator transAnimator;
     private ObjectAnimator trans;
     public SurpriseButton(Context context) {
         super(context);
-        transAnimator = ObjectAnimator.ofFloat(this, "translationY", GlobeContext.mScreenHeight);
+        transAnimator = ObjectAnimator.ofFloat(this, "translationY", GameUtil.getScreenHeight(GlobeContext.getAppContext()));
         transAnimator.setInterpolator(new AccelerateInterpolator());
         transAnimator.setDuration(3000);
         setBackgroundResource(R.drawable.surprise_sun);
@@ -42,7 +43,7 @@ public class SurpriseButton extends Button implements View.OnClickListener, Anim
     public void initEvent(RelativeLayout container) {
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        setTranslationX((float) (Math.random() * (GlobeContext.mScreenWidth - 70)));
+        setTranslationX((float) (Math.random() * (GameUtil.getScreenWidth(GlobeContext.getAppContext()) - 70)));
         container.addView(this, lp);
         transAnimator.start();
     }
@@ -63,7 +64,7 @@ public class SurpriseButton extends Button implements View.OnClickListener, Anim
 
     public void startGetAnimator(boolean flag){
         if(flag) {
-            transAnimator = ObjectAnimator.ofFloat(this, "translationY", GlobeContext.mScreenHeight-TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,new DisplayMetrics()));
+            transAnimator = ObjectAnimator.ofFloat(this, "translationY", GameUtil.getScreenHeight(GlobeContext.getAppContext())-TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,30,new DisplayMetrics()));
             transAnimator.setInterpolator(new AccelerateInterpolator());
             transAnimator.setDuration(trans.getDuration());
             transAnimator.start();

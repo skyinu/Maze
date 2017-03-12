@@ -37,16 +37,16 @@ public abstract class ShapeObject {
 
     public abstract boolean  drawSelfOnCorrect(Canvas canvas, Maze maze, int direct);
 
-    public void setmCoordinate(int x,int y) {
+    public void setCoordinate(int x, int y) {
         mCoordinate.x=x;
         mCoordinate.y=y;
     }
 
-    public void setmBackBitmap(Bitmap mBackBitmap) {
+    public void setBackBitmap(Bitmap mBackBitmap) {
         this.mBackBitmap = mBackBitmap;
     }
 
-    public Point getmCoordinate() {
+    public Point getCoordinate() {
         return mCoordinate;
     }
 }

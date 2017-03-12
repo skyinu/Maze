@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 
 import com.maze.chen.maze.GlobeContext;
 import com.maze.chen.maze.data.Maze;
+import com.maze.chen.maze.utils.GameUtil;
 
 /**
  * Created by chen on 2016/3/8.
@@ -48,7 +49,7 @@ public class VegeShapeObject extends ShapeObject{
         int bottom = (int) (top + maze.getcellWidth() - 8);
         mCoordinate.x=x;
         mCoordinate.y=y;
-        int cellWidth = GlobeContext.mScreenWidth/GlobeContext.mGameColumns;
+        int cellWidth = GameUtil.getScreenWidth(GlobeContext.getAppContext())/GlobeContext.mGameColumns;
         int offsetY= (GlobeContext.mContentHeight-GlobeContext.mGameRows*cellWidth)/2-1;
         mRegion.set(left, top+offsetY, right, bottom+offsetY);
         canvas.drawBitmap(mBackBitmap,null,mRegion,null);

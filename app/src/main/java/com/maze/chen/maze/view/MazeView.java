@@ -2,19 +2,12 @@ package com.maze.chen.maze.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.Toast;
 
 
 import com.maze.chen.maze.MainActivity;
@@ -28,18 +21,20 @@ import java.util.LinkedList;
 import java.util.Stack;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by chen on 2015/12/6.
  */
 public class MazeView extends SurfaceView implements SurfaceHolder.Callback {
+    enum State{NORMAL, PAUSE, WIN, GAME_OVER}
 
 
     /**
      * 迷宫的数据源
      */
     private Maze maze;
+
+    private State mState;
     /**
      *用于同步数据与绘图的信号量
      */
@@ -57,10 +52,6 @@ public class MazeView extends SurfaceView implements SurfaceHolder.Callback {
      * 用与绘制物体的类
      */
     private DrawSolver drawSolver;
-    /**
-     * 这两个坐标用于表示物体的位置
-     */
-
 
     /**
      * 方向消息队列
@@ -119,8 +110,8 @@ public class MazeView extends SurfaceView implements SurfaceHolder.Callback {
                 pathBackStack.clear();
                 controlVariable.resetVariable();
                 hackHandler.removeMessages(1);
-                maze = Maze.initMaze(row, column);
-                maze.createMaze();
+                maze = new Maze(row, column);
+                maze.createMaze(0, 0, row-1, column-1);
                 drawSolver=new DrawSolver(maze,controlVariable,pathDeque);
                 drawSolver.resetAllDatas();
                 semaphore.release();
@@ -226,7 +217,7 @@ public class MazeView extends SurfaceView implements SurfaceHolder.Callback {
         if(controlVariable.isHackShouldDraw) {
             while(pathDeque.size()>0){
                 direct= pathDeque.pollFirst();
-                if(!maze.checkIfCanGo(drawSolver.getHackShapeObject().getmCoordinate(),direct)){
+                if(!maze.checkIfCanGo(drawSolver.getHackShapeObject().getCoordinate(),direct)){
                     flag=true;
                     pathBackStack.push(direct);
                     break;
@@ -329,6 +320,6 @@ public class MazeView extends SurfaceView implements SurfaceHolder.Callback {
      * @param index
      */
     public void destroyWall(int index){
-        maze.destroyWallByPoint(drawSolver.getVegeShapeObject().getmCoordinate(),index);
+        maze.destroyWallByPoint(drawSolver.getVegeShapeObject().getCoordinate(),index);
     }
 }

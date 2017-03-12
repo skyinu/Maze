@@ -12,6 +12,7 @@ import com.maze.chen.maze.GlobeContext;
 import com.maze.chen.maze.MainActivity;
 import com.maze.chen.maze.R;
 import com.maze.chen.maze.controller.EffectButtonAnimator;
+import com.maze.chen.maze.utils.GameUtil;
 
 import java.util.concurrent.BlockingQueue;
 
@@ -71,7 +72,8 @@ public class GameContentView extends RelativeLayout implements View.OnClickListe
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         measureChildren(widthMeasureSpec,heightMeasureSpec);
-        setMeasuredDimension(GlobeContext.mScreenWidth,GlobeContext.mScreenHeight);
+        setMeasuredDimension(GameUtil.getScreenWidth(GlobeContext.getAppContext()),
+                GameUtil.getScreenHeight(GlobeContext.getAppContext()));
     }
 
 

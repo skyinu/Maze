@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 
 import com.maze.chen.maze.controller.HistoryAdapter;
+import com.maze.chen.maze.utils.GameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class HistoryActivity extends ListActivity {
         List<String> mDatas=new ArrayList<>();
         mDatas.add("first");
         for(int i=1;;i++){
-            Integer record=GlobeContext.getHistoryScore(i);
+            Integer record= GameUtil.getHistoryScore(GlobeContext.getAppContext(), i);
             if(record==0)
                 break;
             mDatas.add(record+"s");

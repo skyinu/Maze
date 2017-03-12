@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 
 import com.maze.chen.maze.GlobeContext;
 import com.maze.chen.maze.data.Maze;
+import com.maze.chen.maze.utils.GameUtil;
 
 
 /**
@@ -38,8 +39,8 @@ public class HackShapeObject extends ShapeObject {
         int left = (int) (mCoordinate.y * maze.getcellWidth() + maze.getWhiteSpace() + 4);
         int right = (int) (left + maze.getcellWidth() - 8);
         int bottom = (int) (top + maze.getcellWidth() - 8);
-        int cellWidth = GlobeContext.mScreenWidth/GlobeContext.mGameColumns;
-        int offsetY= (GlobeContext.mContentHeight-GlobeContext.mGameRows*cellWidth)/2-1;
+        int cellWidth = GameUtil.getScreenWidth(GlobeContext.getAppContext())/GlobeContext.mGameColumns;
+        int offsetY= (GameUtil.getScreenHeight(GlobeContext.getAppContext())-GlobeContext.mGameRows*cellWidth)/2-1;
         mRegion.set(left, top+offsetY, right, bottom+offsetY);
         canvas.drawBitmap(mBackBitmap,null,mRegion,null);
         return false;
