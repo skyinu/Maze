@@ -44,7 +44,7 @@ public class DrawSolver {
      */
     public boolean drawHack(Canvas canvas, int direct){
         hackShapeObject.drawSelfOnCorrect(canvas,maze,direct);
-        if(hackShapeObject.getmCoordinate().equals(vegeShapeObject.getmCoordinate()))
+        if(hackShapeObject.getCoordinate().equals(vegeShapeObject.getCoordinate()))
             return true;
         return false;
     }
@@ -116,8 +116,8 @@ public class DrawSolver {
 
 
     public void resetAllDatas(){
-        vegeShapeObject.getmCoordinate().set(0,0);
-        hackShapeObject.getmCoordinate().set(0,0);
+        vegeShapeObject.setCoordinate(0,0);
+        hackShapeObject.setCoordinate(0,0);
     }
 
     public HackShapeObject getHackShapeObject() {

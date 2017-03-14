@@ -30,7 +30,6 @@ public class WelComeActivity extends BaseActivity implements View.OnClickListene
         switch (v.getId()){
             case R.id.id_start_btn:
                 intent=new Intent(WelComeActivity.this,MainActivity.class);
-
                 break;
             case R.id.id_desciption_btn:
                 intent=new Intent(WelComeActivity.this,DescriptionActivity.class);

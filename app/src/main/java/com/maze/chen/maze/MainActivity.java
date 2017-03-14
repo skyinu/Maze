@@ -11,6 +11,8 @@ import android.os.Message;
 import android.view.View;
 
 
+import com.maze.chen.maze.data.GameInfoBean;
+import com.maze.chen.maze.utils.GameUtil;
 import com.maze.chen.maze.view.GameContentView;
 import com.maze.chen.maze.view.MazeView;
 import com.maze.chen.maze.view.TopPanelFragment;
@@ -48,7 +50,6 @@ public class MainActivity extends Activity  {
     /**
      * 产生后退等效果相关的数据
      */
-
     private static int destroyWall = 0;
     private static int subVolicity = 0;
     private static int goBack = 0;
@@ -67,10 +68,13 @@ public class MainActivity extends Activity  {
 
     private GameContentView mGameContentView;
 
+    private GameInfoBean mGameInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
+        mGameInfo = new GameInfoBean();
         mGameContentView = (GameContentView) findViewById(R.id.game_content_view);
         mGameContentView.setMainActivity(this);
         topPanelFragment = (TopPanelFragment) getFragmentManager().findFragmentById(R.id.id_topfragment);
@@ -198,7 +202,7 @@ public class MainActivity extends Activity  {
         mGameContentView.setButtonText(getResources().getText(R.string.sub_velocity)+"x"+subVolicity,0);
         isNeedSendMessage = false;
         curScore = 0;
-        topPanelFragment.setTv_History_Text(GlobeContext.getHistoryScore(pass) + "s");
+        topPanelFragment.setTv_History_Text(GameUtil.getHistoryScore(GlobeContext.getAppContext(), pass) + "s");
         topPanelFragment.setTv_Pass_Text("第" + pass + "关");
         topPanelFragment.setTv_CurTime_Text("0s");
         GlobeContext.nextPass();
@@ -312,7 +316,7 @@ public class MainActivity extends Activity  {
             intent.putExtra("game_result",isWin);
             startActivityForResult(intent,1);
             if (isWin) {
-                GlobeContext.updateHistory(curScore);
+                GameUtil.updateHistory(GlobeContext.getAppContext(), GlobeContext.pass, curScore);
             } else {
                 destroyWall = backDestroyWall;
                 goBack = backGoBack;
