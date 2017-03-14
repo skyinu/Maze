@@ -6,7 +6,7 @@ import android.os.Bundle;
 /**
  * Created by chen on 2016/3/10.
  */
-public class DescriptionActivity extends Activity {
+public class DescriptionActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  * Created by chen on 2016/3/9.
  */
-public class WelComeActivity extends Activity implements View.OnClickListener{
+public class WelComeActivity extends BaseActivity implements View.OnClickListener{
     private Button mStart,mHistory,mDescription;
     @Override
     public void onCreate(Bundle savedInstanceState) {

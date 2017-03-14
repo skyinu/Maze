@@ -11,7 +11,7 @@ import android.widget.ImageView;
 /**
  * Created by chen on 2016/3/10.
  */
-public class GameEndActivity extends Activity implements View.OnClickListener {
+public class GameEndActivity extends BaseActivity implements View.OnClickListener {
     private boolean flag;
     private Button mNextButton;
     private Button mShareButton;

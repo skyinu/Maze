@@ -16,7 +16,7 @@ import java.util.Random;
 /**
  * Created by chen on 2015/12/10.
  */
-public class QuestionActivity extends Activity implements View.OnClickListener{
+public class QuestionActivity extends BaseActivity implements View.OnClickListener{
     private Button btnSure;
     private RadioGroup radioGroup;
     private TextView tv_question;
