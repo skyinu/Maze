@@ -40,7 +40,7 @@ public class HackShapeObject extends ShapeObject {
         int right = (int) (left + maze.getcellWidth() - 8);
         int bottom = (int) (top + maze.getcellWidth() - 8);
         int cellWidth = GameUtil.getScreenWidth(GlobeContext.getAppContext())/GlobeContext.mGameColumns;
-        int offsetY= (GameUtil.getScreenHeight(GlobeContext.getAppContext())-GlobeContext.mGameRows*cellWidth)/2-1;
+        float offsetY= (GlobeContext.mContentHeight-GlobeContext.mGameRows*cellWidth)/2.0F;
         mRegion.set(left, top+offsetY, right, bottom+offsetY);
         canvas.drawBitmap(mBackBitmap,null,mRegion,null);
         return false;

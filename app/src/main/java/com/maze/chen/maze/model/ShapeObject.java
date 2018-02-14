@@ -3,7 +3,7 @@ package com.maze.chen.maze.model;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Point;
-import android.graphics.Rect;
+import android.graphics.RectF;
 
 import com.maze.chen.maze.data.Maze;
 
@@ -19,7 +19,7 @@ public abstract class ShapeObject {
     /**
      * 物块大小
      */
-    protected Rect mRegion;
+    protected RectF mRegion;
     /**
      * 物块的图片
      */
@@ -27,7 +27,7 @@ public abstract class ShapeObject {
 
     public ShapeObject() {
         mCoordinate=new Point(0,0);
-        mRegion=new Rect();
+        mRegion=new RectF();
     }
 
     public ShapeObject(Bitmap mBackBitmap) {

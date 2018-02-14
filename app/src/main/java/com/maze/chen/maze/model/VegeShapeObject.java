@@ -50,7 +50,7 @@ public class VegeShapeObject extends ShapeObject{
         mCoordinate.x=x;
         mCoordinate.y=y;
         int cellWidth = GameUtil.getScreenWidth(GlobeContext.getAppContext())/GlobeContext.mGameColumns;
-        int offsetY= (GlobeContext.mContentHeight-GlobeContext.mGameRows*cellWidth)/2-1;
+        float offsetY= (GlobeContext.mContentHeight-GlobeContext.mGameRows*cellWidth)/2.0F;
         mRegion.set(left, top+offsetY, right, bottom+offsetY);
         canvas.drawBitmap(mBackBitmap,null,mRegion,null);
         return flag;
